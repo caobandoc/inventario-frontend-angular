@@ -1,0 +1,16 @@
+<h1>Admin</h1>
+<!-- src/app/shared/components/nav/nav.component.html -->
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <button ngbNavLink routerLink="/admin/shopping-cart" routerLinkActive="active" ariaCurrentWhenActive="page">Shopping
+      Cart
+    </button>
+  </li>
+  <li ngbNavItem>
+    <button ngbNavLink routerLink="/admin/products" routerLinkActive="active" ariaCurrentWhenActive="page">Products
+    </button>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
+<router-outlet></router-outlet>
+

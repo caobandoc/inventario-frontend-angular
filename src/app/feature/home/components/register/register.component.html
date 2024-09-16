@@ -1,6 +1,5 @@
-<h1>Register</h1>
 <div class="container">
-  <h1>Login</h1>
+  <h1>Register</h1>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="name">Email</label>
@@ -29,7 +28,7 @@
         <span class="errorText">Password is required</span>
       }
     }
-    <button type="submit" [disabled]="registerForm.invalid">Login</button>
+    <button class="btn btn-primary" type="submit" [disabled]="registerForm.invalid">Register</button>
   </form>
 
 </div>

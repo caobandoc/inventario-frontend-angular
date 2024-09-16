@@ -1,0 +1,35 @@
+<p>product works!</p>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name">
+        @if (productForm.get('name')?.touched && productForm.get('email')?.hasError('required')) {
+            <span class="errorText">Name is required</span>
+        }
+    </div>
+
+    <div>
+        <label for="price">Price</label>
+        <input type="number" id="price" formControlName="price">
+        @if (productForm.get('price')?.touched && productForm.get('price')?.hasError('required')) {
+            <span class="errorText">Price is required</span>
+        }
+    </div>
+
+    <div>
+        <label for="name">Stock</label>
+        <input type="number" id="stock" formControlName="stock">
+        @if (productForm.get('stock')?.touched && productForm.get('stock')?.hasError('required')) {
+            <span class="errorText">Stock is required</span>
+        }
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="productForm.invalid">
+        @if(product?.id){
+            Update
+        } @else {
+            Create
+        }
+    </button>
+
+</form>

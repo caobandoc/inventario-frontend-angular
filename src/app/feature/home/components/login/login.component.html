@@ -22,7 +22,11 @@
         <span class="errorText">Password is required</span>
       }
     }
-    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+    @if (alert) {
+      <ngb-alert [type]="alert.type" (closed)="close()">{{ alert.message }}</ngb-alert>
+    }
+
   </form>
 
 </div>
